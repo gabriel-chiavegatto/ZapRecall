@@ -1,16 +1,22 @@
+
 .root{
     background: #FB6B6B;
     width: 100%;
     height: 100vh;
 }
-.tela1{
+.tela{
     display: flex;
     justify-content: center;
     text-align: center;
 }
-.banner{
-    margin-top: 90px;
-    align-items: center;
+.banner-t1{
+    padding-top: 90px;
+    display: flex;
+    justify-content: center;
+}
+.banner-t2{
+    padding-top: 22px;
+    padding-bottom: 37px;
 }
 .logo{
     width: 55px;
@@ -31,6 +37,19 @@
     letter-spacing: -0.012em;
     color: #FFFFFF;
 }
+.banner-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner-flex .logo{
+    width: 26px;
+    height: 30px;
+}
+.banner-flex .nome-app{
+    width: 101.59px;
+    height: 22px;
+}
 .botao-iniciar{
     width: 141px;
     height: 31px;
@@ -41,8 +60,21 @@
     color: #D70900;
     margin-top: 73px;
 }
-.banner-flex{
+.caixa-pergunta{
+    width: 182px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    
+}
+.play{
+    width: 13px;
+    height: 15px;
 }
 
 

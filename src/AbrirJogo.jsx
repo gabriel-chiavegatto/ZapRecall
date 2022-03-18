@@ -6,10 +6,10 @@ export default function AbrirJogo(props) {
     return (
         <div className={props.iniciarTela2}>
             <main>
-                <Perguntas />
-                <Perguntas />
-                <Perguntas />
-                <Perguntas />
+                <Perguntas pergunta="Pergunta 1"/>
+                <Perguntas pergunta="Pergunta 2"/>
+                <Perguntas pergunta="Pergunta 3"/>
+                <Perguntas pergunta="Pergunta 4"/>
                 {/* <Conclusoes /> */}
             </main>
         </div>
