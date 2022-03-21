@@ -9,8 +9,8 @@ export default function Iniciar() {
     const [banner, setBanner] = React.useState("banner-t1");
 
     function trocarTela() {
-        setIniciar("escondido")
-        setBanner("banner-t2")
+        setIniciar("escondido");
+        setBanner("banner-t2");
         setBannerFlex("banner-flex");
         setTela2("");
     }
