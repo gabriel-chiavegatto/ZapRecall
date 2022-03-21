@@ -1,6 +1,6 @@
 import React from "react"
 import Perguntas from "./Perguntas"
-import Conclusoes from "./Conclusoes"
+import Footer from "./Footer";
 
 export default function Jogo(props) {
 
@@ -36,26 +36,23 @@ export default function Jogo(props) {
         pergunta: "Usamos estado (state) para __",
         resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }];
-    const randomArray = questoes.sort(embaralhar);
-    const [arrayImgs, setArrayImgs] = React.useState([]);
-    const [concluidos, setConcluidos] = React.useState(0);
-    const cadaPergunta = randomArray.map((pergunta,index)=> listar(pergunta,index));
-    const [parabens, setParabens] = React.useState("nivel escondido");
-    const [puts, setPuts] = React.useState("nivel escondido");
 
+    const randomArray = questoes.sort(embaralhar);
     function embaralhar() {
         return Math.random() - 0.5;
     }
-    function listar(pergunta, index) {
-        return (<Perguntas ordinario={`Pergunta ${index+1}`} pergunta={pergunta.pergunta} resposta={pergunta.resposta} desempenho={desempenho} key={index}/>)
-    }
-
+    
+    const [arrayImgs, setArrayImgs] = React.useState([]);
+    const [concluidos, setConcluidos] = React.useState(0);        
     function desempenho(imagem) {
         const arrayAtualizado = [...arrayImgs, imagem];
         setConcluidos(concluidos + 1);
         setArrayImgs(arrayAtualizado);
         verificarFim(arrayAtualizado);
     }
+
+    const [parabens, setParabens] = React.useState("nivel escondido");
+    const [puts, setPuts] = React.useState("nivel escondido");
     function verificarFim(arrayAtualizado) {
         if (arrayAtualizado.length === questoes.length) {
             console.log("foi");
@@ -65,15 +62,19 @@ export default function Jogo(props) {
                 setPuts("nivel");
             } else { console.log("rodei aq no igual a zero"); setParabens("nivel") }
         } else { console.log("ueeeee") }
-
+    }
+    
+    const cadaPergunta = randomArray.map((pergunta,index)=> listar(pergunta,index));
+    function listar(pergunta, index) {
+        return (<Perguntas ordinario={`Pergunta ${index+1}`} pergunta={pergunta.pergunta} resposta={pergunta.resposta} desempenho={desempenho} key={index}/>)
     }
 
     return (
         <div className={props.iniciarTela2}>
-            <main className="todasAsPerguntas">
+            <main className="todas-as-perguntas">
                 {cadaPergunta}
             </main>
-            <Conclusoes concluidos={concluidos} imagens={arrayImgs} length={questoes.length} parabens={parabens} puts={puts} />
+            <Footer concluidos={concluidos} imagens={arrayImgs} length={questoes.length} parabens={parabens} puts={puts} />
         </div>
     )
 }

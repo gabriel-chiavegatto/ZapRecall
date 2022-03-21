@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function Conclusoes(props) {
+export default function Footer(props) {
     const { concluidos, imagens, length, parabens, puts } = props;
+    
     const divImgs = imagens.map(img => <img src={img} alt="respostas" />);
 
     return (
