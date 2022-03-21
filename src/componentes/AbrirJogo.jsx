@@ -36,20 +36,28 @@ export default function AbrirJogo(props) {
         pergunta: "Usamos estado (state) para __",
         resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }];
+    const [arrayImgs, setArrayImgs] = React.useState([]);
+    const [concluidos, setConcluidos] = React.useState(0);
+
+    function desempenho(resposta) {
+        // const estruturar = `<img src="${resposta}" alt="respostas" />`
+        setConcluidos(concluidos + 1);
+        setArrayImgs([...arrayImgs, resposta]);
+    }
 
     return (
         <div className={props.iniciarTela2}>
             <main className="todasAsPerguntas">
-                <Perguntas ordinario="Pergunta 1" pergunta={questoes[0].pergunta} resposta={questoes[0].resposta}/>
-                <Perguntas ordinario="Pergunta 2" pergunta={questoes[1].pergunta} resposta={questoes[1].resposta}/>
-                <Perguntas ordinario="Pergunta 3" pergunta={questoes[2].pergunta} resposta={questoes[2].resposta}/>
-                <Perguntas ordinario="Pergunta 4" pergunta={questoes[3].pergunta} resposta={questoes[3].resposta}/>
-                <Perguntas ordinario="Pergunta 5" pergunta={questoes[4].pergunta} resposta={questoes[4].resposta}/>
-                <Perguntas ordinario="Pergunta 6" pergunta={questoes[5].pergunta} resposta={questoes[5].resposta}/>
-                <Perguntas ordinario="Pergunta 7" pergunta={questoes[6].pergunta} resposta={questoes[6].resposta}/>
-                <Perguntas ordinario="Pergunta 8" pergunta={questoes[7].pergunta} resposta={questoes[7].resposta}/>
+                <Perguntas ordinario="Pergunta 1" pergunta={questoes[0].pergunta} resposta={questoes[0].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 2" pergunta={questoes[1].pergunta} resposta={questoes[1].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 3" pergunta={questoes[2].pergunta} resposta={questoes[2].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 4" pergunta={questoes[3].pergunta} resposta={questoes[3].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 5" pergunta={questoes[4].pergunta} resposta={questoes[4].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 6" pergunta={questoes[5].pergunta} resposta={questoes[5].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 7" pergunta={questoes[6].pergunta} resposta={questoes[6].resposta} desempenho={desempenho}/>
+                <Perguntas ordinario="Pergunta 8" pergunta={questoes[7].pergunta} resposta={questoes[7].resposta} desempenho={desempenho}/>
             </main>
-                <Conclusoes />
+                <Conclusoes concluidos={concluidos} imagens={arrayImgs}/>
         </div>
     )
 }

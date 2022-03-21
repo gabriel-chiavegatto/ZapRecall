@@ -153,7 +153,6 @@
     justify-content: center;
     align-items: center;
     background: #FF3030;
-
 }
 .pontuacao .medio{
     display: flex;
@@ -161,7 +160,6 @@
     justify-content: center;
     align-items: center;
     background: #FF922E;
-
 }
 .pontuacao .bom{
     display: flex;
@@ -169,7 +167,6 @@
     justify-content: center;
     align-items: center;
     background: #2FBE34;
-
 }
 .stage4{
     width: 300px;
@@ -212,12 +209,13 @@
 }
 .checks{
     display: flex;
+    justify-content: center;
 }
-.footer img{
-    width: 14px;
-    height: 14px;
+.checks img{
+    width: 23px;
+    height: 23px;
+    margin: 6px 2.5px 0 2.5px;
 }
-
 .escondido{
     display: none;
 }
