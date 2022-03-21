@@ -3,9 +3,7 @@ import Iniciar from "./componentes/Iniciar"
 
 function App() {
     return (
-        <>
             <Iniciar />
-        </>
     )
 }
 

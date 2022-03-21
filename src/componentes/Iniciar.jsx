@@ -1,5 +1,5 @@
 import React from "react";
-// import Header from "./Header.jsx"
+import Header from "./Header.jsx"
 import Jogo from "./Jogo"
 
 export default function Iniciar() {
@@ -15,16 +15,10 @@ export default function Iniciar() {
         setBannerFlex("banner-flex");
         setTela2("");
     }
-
     return (
         <main className="tela">
             <div>
-                <div className={banner}>
-                    <div className={bannerFlex}>
-                        <img className="logo" src="./img/logo.png" alt="logo" ></img>
-                        <h1 className="nome-app">ZapRecall</h1>
-                    </div>
-                </div>
+                <Header banner={banner} bannerFlex={bannerFlex}/> 
                 <button className={iniciar} onClick={trocarTela}>Iniciar Recall</button>
                 <Jogo iniciarTela2={tela2} />
             </div>
