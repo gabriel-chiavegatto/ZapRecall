@@ -1,5 +1,6 @@
 import React from "react";
-import AbrirJogo from "./AbrirJogo"
+// import Header from "./Header.jsx"
+import Jogo from "./Jogo"
 
 export default function Iniciar() {
 
@@ -25,7 +26,7 @@ export default function Iniciar() {
                     </div>
                 </div>
                 <button className={iniciar} onClick={trocarTela}>Iniciar Recall</button>
-                <AbrirJogo iniciarTela2={tela2} />
+                <Jogo iniciarTela2={tela2} />
             </div>
         </main>
     )

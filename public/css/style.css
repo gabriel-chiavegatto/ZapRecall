@@ -71,6 +71,12 @@
 }
 .todasAsPerguntas{
     margin-bottom: calc( 70px + 25px );
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
 }
 .stage1{
     width: 300px;
@@ -100,7 +106,7 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-bottom: 25px;
-    padding: 18px 22px 0 15px;
+    padding: 15px 22px 0 15px;
     position: relative;
 }
 .conteudo-stage2{
@@ -120,7 +126,7 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-bottom: 25px;
-    padding: 18px 22px 0 15px;
+    padding: 15px 22px 0 15px;
     position: relative;
 }
 .conteudo-stage3{
@@ -179,6 +185,9 @@
     display: flex;
     align-items: center;
 }
+.concluido{
+    text-decoration: line-through;
+}
 .conteudo-stage4{
     width: 100%;
     display: flex;
@@ -194,11 +203,11 @@
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
 .footer p{
-    width: 146px;
     height: 22px;
     font-family: 'Recursive';
     font-style: normal;
@@ -206,6 +215,9 @@
     font-size: 18px;
     line-height: 22px;
     color: #333333;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .checks{
     display: flex;
@@ -216,6 +228,9 @@
     height: 23px;
     margin: 6px 2.5px 0 2.5px;
 }
+/* .nivel{
+
+} */
 .escondido{
     display: none;
 }

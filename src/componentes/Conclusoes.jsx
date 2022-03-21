@@ -1,13 +1,25 @@
-export default function Conclusoes(props){
-    const {concluidos, imagens} = props;
-    const divImgs = imagens.map(img => <img src={img} alt="respostas" />)
+import React from "react";
+
+export default function Conclusoes(props) {
+    const { concluidos, imagens, length, parabens, puts } = props;
+    const divImgs = imagens.map(img => <img src={img} alt="respostas" />);
+
     return (
         <footer className="footer">
             <div>
-                <p>{concluidos}/8 CONCLUÍDOS</p>
-                <div className="checks">
-                {divImgs}
+                <div className={parabens}>
+                    <img src="./img/party.png" alt="uhul" /><span>Parabéns!</span>
+                    <p>Você não esqueceu de nenhum flashcard!</p>
                 </div>
+                <div className={puts}>
+                    <img src="./img/sad.png" alt="vish" /><span>Putz...</span>
+                    <p>Ainda faltam alguns... Mas não desanime!</p>
+                </div>
+                <p>{concluidos}/{length} CONCLUÍDOS</p>
+                <div className="checks">
+                    {divImgs}
+                </div>
+
             </div>
         </footer>
     )

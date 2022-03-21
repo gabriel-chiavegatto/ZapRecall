@@ -22,12 +22,13 @@ export default function Perguntas(props) {
     function gravarDesempenho(imagem) {
         setStage("stage4");
         setContStage3("conteudo-stage3 escondido");
-        setContStage4("conteudo-stage4");
+        setContStage4("conteudo-stage4 concluido");
         setSuaResposta(imagem);
         desempenho(imagem);
     }
 
     return (
+        <div className="fonte-perguntas">
         <section className={stage}>
             <div className={contStage1}>
                 <p className="ordem" >{ordinario}</p>
@@ -49,7 +50,7 @@ export default function Perguntas(props) {
                 <p>{ordinario}</p>
                 <img src={suaResposta} alt="Seu desempenho" />
             </div>
-
         </section>
+        </div>
     )
 }

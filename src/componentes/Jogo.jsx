@@ -2,7 +2,7 @@ import React from "react"
 import Perguntas from "./Perguntas"
 import Conclusoes from "./Conclusoes"
 
-export default function AbrirJogo(props) {
+export default function Jogo(props) {
 
     const questoes = [{
         pergunta: "O que é JSX?",
@@ -36,28 +36,44 @@ export default function AbrirJogo(props) {
         pergunta: "Usamos estado (state) para __",
         resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }];
+    const randomArray = questoes.sort(embaralhar);
     const [arrayImgs, setArrayImgs] = React.useState([]);
     const [concluidos, setConcluidos] = React.useState(0);
+    const cadaPergunta = randomArray.map((pergunta,index)=> listar(pergunta,index));
+    const [parabens, setParabens] = React.useState("nivel escondido");
+    const [puts, setPuts] = React.useState("nivel escondido");
 
-    function desempenho(resposta) {
-        // const estruturar = `<img src="${resposta}" alt="respostas" />`
+    function embaralhar() {
+        return Math.random() - 0.5;
+    }
+    function listar(pergunta, index) {
+        return (<Perguntas ordinario={`Pergunta ${index+1}`} pergunta={pergunta.pergunta} resposta={pergunta.resposta} desempenho={desempenho} key={index}/>)
+    }
+
+    function desempenho(imagem) {
+        const arrayAtualizado = [...arrayImgs, imagem];
         setConcluidos(concluidos + 1);
-        setArrayImgs([...arrayImgs, resposta]);
+        setArrayImgs(arrayAtualizado);
+        verificarFim(arrayAtualizado);
+    }
+    function verificarFim(arrayAtualizado) {
+        if (arrayAtualizado.length === questoes.length) {
+            console.log("foi");
+            const filtro = arrayAtualizado.filter(img => img === "./img/errou.png");
+            if (filtro.length > 0) {
+                console.log("rodei aq no maior que zero");
+                setPuts("nivel");
+            } else { console.log("rodei aq no igual a zero"); setParabens("nivel") }
+        } else { console.log("ueeeee") }
+
     }
 
     return (
         <div className={props.iniciarTela2}>
             <main className="todasAsPerguntas">
-                <Perguntas ordinario="Pergunta 1" pergunta={questoes[0].pergunta} resposta={questoes[0].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 2" pergunta={questoes[1].pergunta} resposta={questoes[1].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 3" pergunta={questoes[2].pergunta} resposta={questoes[2].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 4" pergunta={questoes[3].pergunta} resposta={questoes[3].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 5" pergunta={questoes[4].pergunta} resposta={questoes[4].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 6" pergunta={questoes[5].pergunta} resposta={questoes[5].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 7" pergunta={questoes[6].pergunta} resposta={questoes[6].resposta} desempenho={desempenho}/>
-                <Perguntas ordinario="Pergunta 8" pergunta={questoes[7].pergunta} resposta={questoes[7].resposta} desempenho={desempenho}/>
+                {cadaPergunta}
             </main>
-                <Conclusoes concluidos={concluidos} imagens={arrayImgs}/>
+            <Conclusoes concluidos={concluidos} imagens={arrayImgs} length={questoes.length} parabens={parabens} puts={puts} />
         </div>
     )
 }
