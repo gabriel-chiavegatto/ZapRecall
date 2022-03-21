@@ -89,6 +89,10 @@
     justify-content: space-between;
     align-items: center;
 }
+.play{
+    width: 13px;
+    height: 15px;
+}
 .stage2{
     width: 300px;
     height: 131px;
@@ -96,7 +100,18 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-bottom: 25px;
-    padding: 0 22px 0 15px;
+    padding: 18px 22px 0 15px;
+    position: relative;
+}
+.conteudo-stage2{
+    text-align: left;
+}
+.virar-a-resposta{
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 6px;
 }
 .stage3{
     width: 300px;
@@ -105,26 +120,19 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-bottom: 25px;
-    padding: 0 22px 0 15px;
+    padding: 18px 22px 0 15px;
+    position: relative;
 }
-.stage4{
-    width: 300px;
-    height: 65px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    margin-bottom: 25px;
-    padding: 0 22px 0 15px;
-    display: flex;
-    align-items: center;
-}
-.play{
-    width: 13px;
-    height: 15px;
+.conteudo-stage3{
+    text-align: left;
 }
 .pontuacao{
     display: flex;
     justify-content: space-around;
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 6px;
 }
 .pontuacao button{
     width: 85.17px;
@@ -162,6 +170,23 @@
     align-items: center;
     background: #2FBE34;
 
+}
+.stage4{
+    width: 300px;
+    height: 65px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    padding: 0 22px 0 15px;
+    display: flex;
+    align-items: center;
+}
+.conteudo-stage4{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .footer{
     position: fixed;
