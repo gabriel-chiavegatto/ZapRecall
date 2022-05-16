@@ -41,9 +41,9 @@ export default function Jogo(props) {
     function embaralhar() {
         return Math.random() - 0.5;
     }
-    
+
     const [arrayImgs, setArrayImgs] = React.useState([]);
-    const [concluidos, setConcluidos] = React.useState(0);        
+    const [concluidos, setConcluidos] = React.useState(0);
     function desempenho(imagem) {
         const arrayAtualizado = [...arrayImgs, imagem];
         setConcluidos(concluidos + 1);
@@ -51,22 +51,24 @@ export default function Jogo(props) {
         verificarFim(arrayAtualizado);
     }
 
-    const [parabens, setParabens] = React.useState("nivel escondido");
-    const [puts, setPuts] = React.useState("nivel escondido");
+    const [parabens, setParabens] = React.useState("escondido");
+    const [puts, setPuts] = React.useState("escondido");
+    const [reiniciar, setReiniciar] = React.useState('escondido');
+
     function verificarFim(arrayAtualizado) {
         if (arrayAtualizado.length === questoes.length) {
             console.log("foi");
             const filtro = arrayAtualizado.filter(img => img === "./img/errou.png");
             if (filtro.length > 0) {
-                console.log("rodei aq no maior que zero");
                 setPuts("nivel");
-            } else { console.log("rodei aq no igual a zero"); setParabens("nivel") }
-        } else { console.log("ueeeee") }
+                setReiniciar('reiniciar');
+            } else { setParabens("nivel"); setReiniciar('reiniciar'); }
+        }
     }
-    
-    const cadaPergunta = randomArray.map((pergunta,index)=> listar(pergunta,index));
+
+    const cadaPergunta = randomArray.map((pergunta, index) => listar(pergunta, index));
     function listar(pergunta, index) {
-        return (<Perguntas ordinario={`Pergunta ${index+1}`} pergunta={pergunta.pergunta} resposta={pergunta.resposta} desempenho={desempenho} key={index}/>)
+        return (<Perguntas ordinario={`Pergunta ${index + 1}`} pergunta={pergunta.pergunta} resposta={pergunta.resposta} desempenho={desempenho} key={index} />)
     }
 
     return (
@@ -74,7 +76,7 @@ export default function Jogo(props) {
             <main className="todas-as-perguntas">
                 {cadaPergunta}
             </main>
-            <Footer concluidos={concluidos} imagens={arrayImgs} length={questoes.length} parabens={parabens} puts={puts} />
+            <Footer concluidos={concluidos} imagens={arrayImgs} length={questoes.length} parabens={parabens} puts={puts} reiniciar={reiniciar}/>
         </div>
     )
 }

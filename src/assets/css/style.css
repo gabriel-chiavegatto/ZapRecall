@@ -69,6 +69,9 @@
     line-height: 22px;
     text-align: center;
 }
+.botao-iniciar:hover{
+    cursor: pointer;
+}
 .todas-as-perguntas{
     margin-bottom: calc( 70px + 25px );
     font-family: 'Recursive';
@@ -99,6 +102,9 @@
     width: 13px;
     height: 15px;
 }
+.play:hover{
+    cursor: pointer;
+}
 .stage2{
     width: 300px;
     height: 131px;
@@ -118,6 +124,9 @@
     position: absolute;
     right: 15px;
     bottom: 6px;
+}
+.virar-a-resposta:hover{
+    cursor: pointer;
 }
 .stage3{
     width: 300px;
@@ -152,6 +161,9 @@
     font-size: 12px;
     line-height: 14px;
     padding: 0 8px;
+}
+.pontuacao button:hover{
+    cursor:pointer;
 }
 .pontuacao .ruim{
     display: flex;
@@ -205,6 +217,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-top: 14px;
 }
 .footer p{
     height: 22px;
@@ -217,7 +230,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 14px;
+    margin-bottom: 6px;
 }
 .checks{
     display: flex;
@@ -226,10 +239,43 @@
 .checks img{
     width: 23px;
     height: 23px;
-    margin: 6px 2.5px 10px 2.5px;
+    margin: 0 2.5px 10px 2.5px;
 }
 .nivel {
     padding-top: 15px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+}
+.flex-reinicio{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reiniciar{
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 21px 0;
+}
+.reiniciar:hover{
+    cursor: pointer;
 }
 .escondido{
     display: none;
